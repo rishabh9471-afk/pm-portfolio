@@ -3,52 +3,32 @@ import { Reveal, SectionHeader } from './ui';
 
 export default function Experience() {
   return (
-    <section className="section section-alt" id="experience">
+    <section className="section" id="experience">
       <div className="container">
-        <SectionHeader
-          eyebrow="Experience"
-          title="Three years, one company, two levels"
-          intro="Promoted from L1 to L2 at Truworth Wellness, moving from growth and delivery work to owning AI, platform and 0→1 bets."
-        />
-        <div className="timeline">
+        <SectionHeader eyebrow="Experience" title="Where I've built" />
+        <div className="exp-list">
           {experience.map((job, i) => (
-            <Reveal key={job.title} delay={i * 100} className="timeline-item">
-              <span className="timeline-dot" />
-              <div className="timeline-card">
-                <div className="timeline-head">
-                  <div>
-                    <h3>{job.title}</h3>
-                    <span className="timeline-company">
-                      {job.company} · {job.location}
-                    </span>
-                  </div>
-                  <span className="timeline-period">{job.period}</span>
-                </div>
-                <p className="timeline-summary">{job.summary}</p>
-                <ul className="timeline-list">
-                  {job.highlights.map((h) => {
-                    const [what, result] = h.split(' → ').map((s) => s.trim());
-                    return (
-                      <li key={h}>
-                        <span>{what}</span>
-                        {result && <strong>{result}</strong>}
-                      </li>
-                    );
-                  })}
+            <Reveal key={job.title} delay={i * 60} className="exp-item">
+              <div className="exp-when">{job.period}</div>
+              <div className="exp-what">
+                <h3>
+                  {job.title} <span>· {job.company}</span>
+                </h3>
+                <p>{job.summary}</p>
+                <ul className="exp-highlights">
+                  {job.highlights.map((h) => (
+                    <li key={h}>{h}</li>
+                  ))}
                 </ul>
               </div>
             </Reveal>
           ))}
-          <Reveal delay={200} className="timeline-item">
-            <span className="timeline-dot muted" />
-            <div className="timeline-card edu">
-              <div className="timeline-head">
-                <div>
-                  <h3>{education.degree}</h3>
-                  <span className="timeline-company">{education.school}</span>
-                </div>
-                <span className="timeline-period">{education.period}</span>
-              </div>
+          <Reveal className="exp-item edu" delay={120}>
+            <div className="exp-when">{education.period}</div>
+            <div className="exp-what">
+              <h3>
+                {education.degree} <span>· {education.school}</span>
+              </h3>
             </div>
           </Reveal>
         </div>

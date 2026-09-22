@@ -1,52 +1,44 @@
 /* ------------------------------------------------------------------
- *  EDIT THIS FILE FIRST.
- *  Every link on the site is read from here. Paste your real URLs
- *  between the quotes. Any link left as "" is hidden automatically
- *  (buttons don't render), so the site never shows a broken link.
+ *  EDIT THIS FILE FOR LINKS.
+ *  Any link left as "" is hidden automatically.
  * ------------------------------------------------------------------ */
 
 export const profile = {
   name: 'Rishabh Sharma',
   role: 'AI Product Manager',
+  status: 'Exploring Product & AI Opportunities',
   location: 'Bengaluru, India',
   email: 'rishabh9471@gmail.com',
-  phone: '+91 7742313435',
-  showPhone: false, // set true if you want your phone number visible publicly
-  availability: 'Available to join immediately',
+  photo: '/profile.jpg', // file lives in /public
   resumeUrl: '/Rishabh_Sharma_Resume.pdf', // file lives in /public
 };
 
 export const socialLinks = {
-  linkedin: '', // e.g. 'https://www.linkedin.com/in/your-handle'
-  github: '', // e.g. 'https://github.com/your-handle'
-  medium: '', // optional: blog / Medium / Substack
-  calendly: '', // optional: booking link for recruiter calls
+  linkedin: 'https://www.linkedin.com/in/rishabh-sharma-pm',
+  github: 'https://github.com/rishabh9471-afk',
 };
 
 export const projectLinks = {
   skillsprint: {
-    live: '', // e.g. 'https://skillsprint.vercel.app'  ← also used for the live embed
-    github: '', // e.g. 'https://github.com/your-handle/skillsprint'
-    prd: '', // optional: link to the PRD (Notion / Google Doc)
+    live: 'https://skillsprint-kappa.vercel.app/',
+    github: 'https://github.com/rishabh9471-afk/Skillsprint',
+    embed: 'https://skillsprint-kappa.vercel.app/', // shown inside the preview window
   },
   ddp: {
-    live: '', // e.g. 'https://ddp-prototype.vercel.app'
-    github: '', // optional
-    prd: '', // optional
+    live: 'https://v0.app/manishsharma-5037/chat/doctor-discovery-platform-o61kLbDhZCi?+path=%2Fdoctors%2F1+&b=v0-preview-b_4tGNiCMNAw4&f=1&path=%2F',
+    github: '',
+    // If the preview window shows "refused to connect", publish the prototype from v0
+    // (Publish → Vercel) and paste that *.vercel.app URL here.
+    embed: 'https://v0.app/manishsharma-5037/chat/doctor-discovery-platform-o61kLbDhZCi?+path=%2Fdoctors%2F1+&b=v0-preview-b_4tGNiCMNAw4&f=1&path=%2F',
   },
 };
 
-/* ------------------------------------------------------------------
- *  CERTIFICATIONS
- *  Replace the sample entry below with your real certification(s).
- *  Delete every entry (leave the array empty: []) to hide the section.
- * ------------------------------------------------------------------ */
+/* Delete every entry (leave []) to hide the section. */
 export const certifications = [
   {
-    name: 'Your Certification Name',
-    issuer: 'Issuing Organization',
-    date: 'Month YYYY',
-    credentialUrl: '', // verification link
-    skills: ['Skill one', 'Skill two'],
+    name: 'MoEngage Certification',
+    issuer: 'MoEngage',
+    date: '', // e.g. 'Mar 2024'
+    credentialUrl: 'https://drive.google.com/file/d/1p0aFPqINCt5lsEAy5rloHj-J_UGU_MoS/view?usp=sharing',
   },
 ];

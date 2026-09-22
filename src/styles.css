@@ -464,3 +464,87 @@ img { display: block; max-width: 100%; }
   .reveal { opacity: 1; transform: none; }
   html { scroll-behavior: auto; }
 }
+
+/* ============ Subtle motion ============ */
+
+/* Reading-progress line under the nav */
+.scroll-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), #6ee7f9);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 0.12s linear;
+}
+
+/* Green status dot: soft radar blip */
+.status-dot { position: relative; }
+.status-dot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: var(--green);
+  animation: blip 2.4s ease-out infinite;
+}
+@keyframes blip {
+  0% { transform: scale(1); opacity: 0.55; }
+  70%, 100% { transform: scale(2.8); opacity: 0; }
+}
+
+/* Cards float up slightly on hover */
+.case-card,
+.project,
+.cs-pager a {
+  transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), border-color 0.35s, background 0.35s;
+}
+.case-card:hover,
+.project:hover,
+.cs-pager a:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(155, 140, 255, 0.18);
+}
+.project:hover { border-color: rgba(155, 140, 255, 0.45); }
+
+/* Experience rows: soft highlight with an accent bar sliding in */
+.exp-item {
+  position: relative;
+  transition: background 0.3s, padding-left 0.35s var(--ease);
+  border-radius: 0;
+}
+.exp-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 16px;
+  bottom: 16px;
+  width: 2px;
+  border-radius: 2px;
+  background: var(--accent);
+  transform: scaleY(0);
+  transition: transform 0.35s var(--ease);
+}
+.exp-item:hover {
+  background: linear-gradient(90deg, rgba(155, 140, 255, 0.06), transparent 70%);
+  padding-left: 14px;
+}
+.exp-item:hover::before { transform: scaleY(1); }
+
+/* Metric strip: gentle lift per cell */
+.about-metrics li { transition: background 0.3s; }
+.about-metrics li:hover { background: rgba(255, 255, 255, 0.025); }
+
+/* Touch screens have no hover: skip the lift so taps don't leave cards raised */
+@media (hover: none) {
+  .case-card:hover, .project:hover, .cs-pager a:hover { transform: none; box-shadow: none; }
+  .exp-item:hover { padding-left: 0; background: none; }
+  .exp-item:hover::before { transform: scaleY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-dot::after { animation: none; }
+  .case-card:hover, .project:hover, .cs-pager a:hover { transform: none; }
+}

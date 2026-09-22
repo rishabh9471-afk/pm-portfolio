@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { profile } from '../config';
 import { useActiveSection } from '../hooks';
 import { Close, Menu } from './Icons';
@@ -16,6 +16,29 @@ export default function Nav({ onCasePage }) {
   const observed = useActiveSection(ids, onCasePage);
   const active = onCasePage ? 'work' : observed;
   const [open, setOpen] = useState(false);
+  const [progress, setProgress] = useState(0);
+
+  // Reading progress: 0 at the top of the page, 1 at the bottom.
+  useEffect(() => {
+    let raf;
+    const update = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      setProgress(max > 0 ? Math.min(h.scrollTop / max, 1) : 0);
+    };
+    const onScroll = () => {
+      cancelAnimationFrame(raf);
+      raf = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [onCasePage]);
 
   return (
     <header className="nav">
@@ -44,6 +67,7 @@ export default function Nav({ onCasePage }) {
           {open ? <Close /> : <Menu />}
         </button>
       </div>
+      <div className="scroll-progress" style={{ transform: `scaleX(${progress})` }} aria-hidden="true" />
     </header>
   );
 }

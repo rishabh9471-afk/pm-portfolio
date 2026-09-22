@@ -36,7 +36,7 @@ export const projectLinks = {
 /* Delete every entry (leave []) to hide the section. */
 export const certifications = [
   {
-    name: 'MoEngage Certification',
+    name: 'MoEngage Growth Marketing Expert',
     issuer: 'MoEngage',
     date: '', // e.g. 'Mar 2024'
     credentialUrl: 'https://drive.google.com/file/d/1p0aFPqINCt5lsEAy5rloHj-J_UGU_MoS/view?usp=sharing',

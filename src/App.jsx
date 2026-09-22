@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import About from './components/About';
+import Background from './components/Background';
 import CaseStudyPage from './components/CaseStudyPage';
 import Contact from './components/Contact';
 import Experience from './components/Experience';
@@ -26,7 +27,7 @@ export default function App() {
 
   return (
     <>
-      <div className="bg" aria-hidden="true" />
+      <Background />
       <Nav onCasePage={Boolean(caseId)} />
       {caseId ? (
         <>

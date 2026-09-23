@@ -478,16 +478,16 @@ export const education = {
 export const projects = [
   {
     id: 'skillsprint',
-    name: 'SkillSprint',
+    name: 'SkillSprint AI Coach',
     kind: 'Live product',
-    tagline: 'Gamified learning platform for aspiring PMs',
+    tagline: 'An AI interview coach for aspiring PMs',
     description:
-      'Scenario-based PM challenges with XP, streaks and leaderboards — taken from a competitive-audit insight to a live, user-tested product with automated GitHub → Vercel deployment.',
+      'Users answer real PM scenarios in their own words. An AI grader scores each answer on a 4-part rubric with quoted evidence, rewrites the weakest paragraph, then asks 2 interviewer follow-ups before a final verdict and XP. Backed by a PRD, a golden-set eval and a live metrics dashboard.',
     impact: [
-      { value: '200+', label: 'Users' },
-      { value: '70%', label: 'Scenario completion' },
+      { value: '22', label: 'Edge cases designed & tested' },
+      { value: '₹0', label: 'Running cost on free tiers' },
     ],
-    skills: ['PRD', 'Gamification', 'React', 'Vercel'],
+    skills: ['AI product design', 'LLM evals', 'Gemini + Groq', 'Supabase'],
   },
   {
     id: 'ddp',

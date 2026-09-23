@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { certifications, projectLinks } from '../config';
 import { projects, skillGroups } from '../data';
-import { External, GitHub } from './Icons';
+import { Doc, External, GitHub } from './Icons';
 import { LinkButton, Reveal, SectionHeader } from './ui';
 
 const FRAME_W = 1280; // the embedded site renders at desktop width, then scales down
@@ -80,6 +80,9 @@ function ProjectCard({ project, links, delay }) {
           <div className="project-links">
             <LinkButton href={links.live} variant="primary">
               <External /> {liveLabel}
+            </LinkButton>
+            <LinkButton href={links.prd}>
+              <Doc /> PRD
             </LinkButton>
             <LinkButton href={links.github}>
               <GitHub /> Code

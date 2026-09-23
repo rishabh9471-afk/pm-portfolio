@@ -22,11 +22,13 @@ export const projectLinks = {
   skillsprint: {
     live: 'https://skillsprint-kappa.vercel.app/',
     github: 'https://github.com/rishabh9471-afk/Skillsprint',
+    prd: 'https://github.com/rishabh9471-afk/Skillsprint/blob/main/PRD.md',
     embed: 'https://skillsprint-kappa.vercel.app/', // shown inside the preview window
   },
   ddp: {
     live: 'https://v0.app/manishsharma-5037/chat/doctor-discovery-platform-o61kLbDhZCi?+path=%2Fdoctors%2F1+&b=v0-preview-b_4tGNiCMNAw4&f=1&path=%2F',
     github: '',
+    prd: '', // optional: add a PRD link for DDP here
     // If the preview window shows "refused to connect", publish the prototype from v0
     // (Publish → Vercel) and paste that *.vercel.app URL here.
     embed: 'https://v0.app/manishsharma-5037/chat/doctor-discovery-platform-o61kLbDhZCi?+path=%2Fdoctors%2F1+&b=v0-preview-b_4tGNiCMNAw4&f=1&path=%2F',
